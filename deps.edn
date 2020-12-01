@@ -1,0 +1,15 @@
+{ :deps {
+    org.clojure/clojure {:mvn/version "1.10.1"}
+  }
+  :aliases {
+    :repl {
+      :extra-deps {
+        cider/cider-nrepl {:mvn/version "0.25.5"}
+        nrepl/nrepl       {:mvn/version "0.8.3"}
+      }
+      :main-opts [
+        "-m" "nrepl.cmdline"
+      ]
+    }
+  }
+}
