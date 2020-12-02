@@ -3,7 +3,7 @@
     [clojure.string :as str]
     [clojure.set :as set]
     [clojure.walk :as walk]
-    [advent2020.core :refer :all]))
+    [advent2020.core :refer [parse-long]]))
 
 (set! *warn-on-reflection* true)
 
