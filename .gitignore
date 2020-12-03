@@ -5,3 +5,4 @@ lein*
 .tool-versions
 .calva
 .nrepl-port
+inputs
