@@ -9,6 +9,9 @@
   (when s
     (Integer/parseInt s)))
 
+(defn parse-binary [s]
+  (when s
+    (Integer/parseInt s 2)))
 
 (defn zip [xs ys]
   (map vector xs ys))
