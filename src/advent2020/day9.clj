@@ -40,9 +40,26 @@
 #_(time (part1 nums preamble-length))
 
 
-(defn part2 []
-)
+(defn find-contag-set [nums sum]
+  (let [nums-length (count nums)]
+    (->> (for [start-ix (range (- nums-length 1))
+               contag-length (range 2 (- nums-length start-ix))]
+           (let [contag-set (->> nums
+                                 (drop start-ix)
+                                 (take contag-length))]
+             (when (= sum (reduce + contag-set))
+               contag-set)))
+         (filter some?)
+         (apply concat))))
 
-#_(time (part2))
+(defn part2 [nums sum]
+  (as-> (find-contag-set nums sum) $
+    (+ (apply min $) (apply max $))))
+
+(def part1-result (part1 nums preamble-length))
+
+#_(time (part2 test-nums 127))
+#_(time (part2 nums part1-result))
+
 
 #_(require 'advent2020.day9 :reload)
